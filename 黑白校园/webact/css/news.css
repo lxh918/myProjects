@@ -1,0 +1,30 @@
+.news-list{
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+}
+.page-header{
+    margin-bottom: 80px;
+}
+#tabNews{
+    margin-top: 50px;
+    border-top: 1px solid #e0e0e0;
+
+}
+#heibainews{
+    padding-top: 0;
+}
+.nav-tabs{
+    width: 400px;
+    margin-top: 40px;
+}
+.intro{
+    background: url("webact/images/offical/banner3.jpg") no-repeat center;
+}
+.pageNum{
+    margin-top: -50px;
+    position: relative;
+    z-index: 4;
+}

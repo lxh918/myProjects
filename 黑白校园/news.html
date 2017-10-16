@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>新闻中心</title>
+    <link href="webact/css/bootstrap.min.css" rel="stylesheet">
+    <link href="webact/css/reset.css" rel="stylesheet">
+    <link href="webact/css/swiper.min.css" rel="stylesheet">
+
+    <link href="webact/css/index.css" rel="stylesheet">
+    <link href="webact/css/university-union.css" rel="stylesheet">
+    <link href="webact/css/news.css" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+        
+        .intro {
+            background: url("webact/images/offical/banner3.jpg") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+        
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+        }
+        
+        .swiper-pagination {
+            position: inherit;
+        }
+        
+        .bs-example-tabs {
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+        
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+            font-size: 14px;
+        }
+        
+        .img-container {
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        button.list-active {
+            background: #f5f5f5;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .list-group-item:first-child {
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+        
+        .swiper-pagination {
+            text-align: left;
+        }
+        
+        .swiper-pagination-bullet {
+            background: transparent;
+            border: 1px solid #303030;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            color: #303030;
+            margin-right: 10px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #aaaaaa;
+        }
+        
+        .news-images div {
+            display: none;
+        }
+        /*.news-images div:nth-child(1){ display:block;}*/
+        
+        .news-images div.active {
+            display: block;
+        }
+        
+        a:focus {
+            outline: 0px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+        
+        #myTab {
+            padding: 5px 0 0 15px;
+        }
+        
+        #myTab li {
+            display: inline-block;
+            border: .8px solid black;
+            margin-right: 10px;
+        }
+        
+        #myTab li a {
+            padding: 2px 6px;
+            font-size: 11px;
+        }
+        
+        .list-item {
+            width: 399px;
+            font-size: 14px;
+            height: 255px;
+        }
+        
+        .newtop {
+            width: 515px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        
+        #img1, #img2,#img3,#img4,#img5,#img6, #img7, #img8,#img9,#img10, #img11, #img12,#img13,#img14,#img15,
+        #img16,#img17,#img18,#img19,#img20,#img21,#img22,#img23,#img24,#img25, #img26, #img27,#img28 {
+            width: 510px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+<script>
+    var num = Math.ceil(Math.random()*6)
+</script>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="./index.html">
+                    <img src="webact/images/offical/logo.png" style="width: 50%;" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">线上推广 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="university-union.html">高校社团联盟</a></li>
+                            <li><a href="university-KOL.html">高校KOL联盟</a></li>
+                            <li><a href="community.html">社群营销</a></li>
+
+                            <!--<li role="separator" class="divider"></li>-->
+                            <li><a href="self-media-union.html">自媒体联盟</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="offline-promotion.html">线下推广</a></li>
+                    <li><a href="superIP.html">校园超级IP</a></li>
+
+                    <li><a href="hcard.html">校园黑卡</a></li>
+                    <li class="active"><a href="news.html">新闻中心</a></li>
+                    <li><a href="about.html">关于黑白校园</a></li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="intro">
+        <div class="option"></div>
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">新闻中心</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <div class="page-header">
+        <h1>黑白新闻</h1>
+    </div>
+    <div class="container news-list" id="heibainews">
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade in active" id="new1">
+                <div class="list-item">
+                    <button type="button" class="list-group-item" onmouseover="newover1()">
+                        <a href="news-intro.html#/id_3">QQ浏览器携手黑白校园盛大开启“最潮校园女主播”票选活动</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover2()">
+                        <a href="news-intro.html#/id_4">那些风靡校园的APP有没有一款戳中你的心？</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover3()">
+                        <a href="news-intro.html#/id_5">校园社交卡位战：人人之后 谁来号令江湖？</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover4()">
+                        <a href="news-intro.html#/id_1">黑白校园COO姬鲲关于开学季的项目发布</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover5()">
+                        <a href="news-intro.html#/id_6">黑白校园喜获2015中国互联网领袖峰会大奖</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover6()">
+                        <a href="news-intro.html#/id_2">苏宁电脑联合黑白校园APP掘金校园经济</a>
+                    </button>
+                </div>
+
+                <div class="newtop">
+                    <img id="img1" src="webact/images/news/nt1.png">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="new2">
+                <div class="list-item">
+                    <button type="button" class="list-group-item" onmouseover="newover7()">
+                        <a href="">阿里老兵创业大学生社交：“黑白校园”欲以分时社交概念切入校园移动市场</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover8()">
+                        <a href="">PopoBoom亚洲首演，黑白校园助力走入校园</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover9()">
+                        <a href="">黑白校园做的不是社交，是触达学生群体的介质和网络”</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover10()">
+                        <a href="">黑白校园：打造"全天候的校园生活社区"</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover11()">
+                        <a href="">黑白校园携票乎合推明星演唱会抢票活动</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover12()">
+                        <a href="">来来会携手黑白校园 为大学生打开直通世界的捷径</a>
+                    </button>
+                </div>
+                <div class="newtop">
+                    <img id="img2" src="webact/images/news/nt7.jpg">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="new3">
+                <div class="list-item">
+                    <button type="button" class="list-group-item" onmouseover="newover13()">
+                        <a href="">爱财集团联合黑白校园举办首届“FUN开学季”</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover14()">
+                        <a href="">听投资人说“不” 阿里创业老兵“黑白校园”反吐槽</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover15()">
+                        <a href="">校联帮前 CEO 刘泽碧加入黑白校园，首谈大学创业项目的成功与失败</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover16()">
+                        <a href="">黑白校园携手摩登天空引爆校园音乐热潮</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover17()">
+                        <a href="">黑白校园狄玮杰：一份情怀与一个产品的交融</a>
+                    </button>
+                    <button type="button" class="list-group-item" onmouseover="newover18()">
+                        <a href="">黑白校园助力文化产业《一路向前》</a>
+                    </button>
+                </div>
+                <div class="newtop">
+                    <img id="img3" src="webact/images/news/nt13.jpg">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="new4">
+                <div class="list-item">
+                    <button type="button" class="list-group-item" onmouseover="newover19()">
+                        <a href="">QQ浏览器携手黑白校园打造首届大学生潮流文化嘉年华</a>
+                    </button>
+                </div>
+                <div class="newtop">
+                    <img id="img4" src="webact/images/news/nt19.jpg">
+                </div>
+            </div>
+        </div>
+        <ul id="myTab" class="nav">
+            <li class="active">
+                <a href="#new1" data-toggle="tab">1</a>
+            </li>
+            <li><a href="#new2" data-toggle="tab">2</a></li>
+            <li>
+                <a href="#new3" data-toggle="tab">3</a>
+            </li>
+            <li><a href="#new4" data-toggle="tab">4</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs" id="newList">
+        <ul id="myTabs" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" data-toggle="tab">企业</a></li>
+            <li role="presentation"><a href="#second" data-toggle="tab">互联网</a></li>
+            <li role="presentation"><a href="#third" data-toggle="tab">大学</a></li>
+            <li role="presentation"><a href="#fourth" data-toggle="tab">自媒体</a></li>
+            <li role="presentation"><a href="#fifth" data-toggle="tab">娱乐</a></li>
+            <li role="presentation"><a href="#sixth" data-toggle="tab">体育</a></li>
+        </ul>
+        <div class="container" id="tabNews">
+            <div id="myTabContent" class="tab-content">
+                <!--1-->
+                <div role="tabpanel" class="active in tab-pane fade" id="home">
+                    <section>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="new5">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover20()">
+                        <a href="">Uber 性骚扰丑闻揭示病态创业文化：公司大于法？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover21()">
+                        <a href="">腾讯微视即将关闭，自身困境还是短视频行业洗牌？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover22()">
+                        <a href="">供应商不给力，iPhone 8可能临阵弃用曲面屏</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover23()">
+                        <a href="">滴滴否认收购支付牌照，回应将持续专注出行领域</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover24()">
+                        <a href="">业绩总是比对面的星巴克好，茶饮品牌“奈雪の茶”是怎么做到的？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover25()">
+                        <a href="">开完全球最大旗舰店，乐高又要在上海建主题乐园了</a>
+                    </button>
+                                </div>
+
+                                <div class="newtop">
+                                    <img id="img5" src="webact/images/news/nb1.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new6">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover26()">
+                        <a href="">足不出户享受异地美食，Goldbely 获 1000 万美元 A 轮融资</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover27()">
+                        <a href="">腾讯刚宣布要贷款20亿美元，阿里也被曝贷款50亿美元</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover28()">
+                        <a href="">阿里再增持Paytm母公司One97股份，估值已达到50亿美元</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover29()">
+                        <a href="">滴滴Uber战火再起：Charlie和滴滴全球无人驾驶大挑战</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover30()">
+                        <a href="">科大讯飞刘庆峰：今年AI将迎来分水岭，不再忽悠概念，应用效果见分晓！</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover31()">
+                        <a href="">陌陌2016年营收同比增长52.4%，直播占总营收比重高达79%</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img6" src="webact/images/news/nb7.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new7">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover32()">
+                        <a href="">大众自动驾驶概念车，这前卫的造型你能接受吗？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover33()">
+                        <a href="">十张图看清阿里、京东、亚马逊之间谁的模式最赚钱 |图说</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover34()">
+                        <a href="">聊天机器人错误回应达70%，Fackbook决定削减AI项目预算</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover35()">
+                        <a href="">为了应付钓鱼执法，Uber监控了执法人员信息</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover36()">
+                        <a href="">员工被曝热买自家股票 顺丰称与企业无关</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover37()">
+                        <a href="">临阵倒戈 乐视网疑似遭原二股东狂抛套现6.4亿</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img7" src="webact/images/news/nb13.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new8">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover38()">
+                        <a href="">联想以16.2亿元将物业合资公司49%股份出售给融创</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover39()">
+                        <a href="">华为计划投资新兴经济体 扩展海外市场</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img8" src="webact/images/news/nb19.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="myTab" class="nav">
+                            <li class="active">
+                                <a href="#new5" data-toggle="tab">1</a>
+                            </li>
+                            <li><a href="#new6" data-toggle="tab">2</a></li>
+                            <li>
+                                <a href="#new7" data-toggle="tab">3</a>
+                            </li>
+                            <li><a href="#new8" data-toggle="tab">4</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <!--2-->
+                <div role="tabpanel" class="tab-pane fade" id="second" aria-labelledby="sixth-tab">
+                    <section>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="new9">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover40()">
+                        <a href="">无现金支付：带来的便利与交出去的自由</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover41()">
+                        <a href="">知识变现还是内容付费？看互联网时代以来的“钱来钱往”</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover42()">
+                        <a href="">微软亚洲研究院谢幸：如何让机器拥有像人一样的思维？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover43()">
+                        <a href="">马云抛出NASA计划搞“技术导弹”，掀起互联网技术军备竞赛？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover44()">
+                        <a href="">在互联网 最难的医疗行业，腾讯需要超越“连接一切”</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover45()">
+                        <a href="">医疗设备是安全重灾区，搞不好身体会被黑客控制</a>
+                    </button>
+                                </div>
+
+                                <div class="newtop">
+                                    <img id="img9" src="webact/images/news/nb21.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new10">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover46()">
+                        <a href="">无人驾驶时代，传说中的“女司机”会彻底解放吗？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover47()">
+                        <a href="">不用智能手机都可以的国家支付二维码，能否把印度带入“无现金社会”？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover48()">
+                        <a href="">一个做互联网POS机的企业想终结POS，依靠新出的商用平板和“手机”</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover49()">
+                        <a href="">福佑卡车获2.5亿元C轮融资，数据与金融仍有想象空间</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover50()">
+                        <a href="">工业3.0时代，钱塘打造了一个工业大数据交易平台</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover51()">
+                        <a href="">花四年时间再造一个网易，丁磊在电商这条路上是怎么较劲的</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img10" src="webact/images/news/nb27.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new11">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover52()">
+                        <a href="">36氪CEO刘成城：打磨核心竞争力建立有壁垒的创业公司才不会被洗牌</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover53()">
+                        <a href="">马化腾：对于共享单车这种新模式，未来几个月问题会扭转</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover54()">
+                        <a href="">一台电玩车为何能火遍北美医院？这是一份“盈利 慈善”的完美案例|发现</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover55()">
+                        <a href="">星瀚资本杨歌：互联网和新技术对媒体的3个改变</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover56()">
+                        <a href="">看完华为裁员真相恐慌不已，任正非们不相信眼泪，你离34岁还有多远?</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover57()">
+                        <a href="">腾讯投资VS阿里资本，谁是最强王者?</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img11" src="webact/images/news/nb33.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new12">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover58()">
+                        <a href="">百度移动搜索故障遭工信部约谈 阿里腾讯也要吸取教训</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover59()">
+                        <a href="">中国安卓手机勒索软件泛滥 90后和00后成主要受害群体</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover60()">
+                        <a href="">2015年校园市场行业最具潜力创业公司评选活动结束</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img12" src="webact/images/news/nb39.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="myTab" class="nav">
+                            <li class="active">
+                                <a href="#new9" data-toggle="tab">1</a>
+                            </li>
+                            <li><a href="#new10" data-toggle="tab">2</a></li>
+                            <li>
+                                <a href="#new11" data-toggle="tab">3</a>
+                            </li>
+                            <li><a href="#new12" data-toggle="tab">4</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <!--3-->
+                <div role="tabpanel" class="tab-pane fade" id="third" aria-labelledby="sixth-tab">
+                    <section>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="new13">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover61()" onmouseout="newout61()">
+                        <a href="">大学生拍摄微纪录片 聚焦川剧幕后“守艺人”</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover62()">
+                        <a href="">昆明8名大学生在学校里养鸡 年营业额近80万元</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover63()">
+                        <a href="">2017北京市大学综合实力排行榜，北大清华第一第二</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover64()">
+                        <a href="">厉害了!南外146人保送名校 其中25人保送清华北大</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover65()">
+                        <a href="">大学生因一张照片“惹债上身” 莫名被"欠债"2900元</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover66()">
+                        <a href="">女大学生骑“死飞”坠崖身亡 谁之过？</a>
+                    </button>
+                                </div>
+
+                                <div class="newtop">
+                                    <img id="img13">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new14">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover67()">
+                        <a href="">留住大学生的优势越来越多了</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover68()">
+                        <a href="">大学App打卡督促学习 专家：自我约束力不强就是摆设</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover69()">
+                        <a href="">女大学生青睐新兴行业 普遍薪资要求不高</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover70()">
+                        <a href="">高校老师龙袍上课 网友：为何我们学校没有？感觉上了假大学</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover71()">
+                        <a href="">调查显示:2015届女大学生就业量最大的职业是会计</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover72()">
+                        <a href="">大学生休学创业敢于追梦？近四成受访者明确说不会尝试 一成愿试试徐</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img14" src="webact/images/news/nb47.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new15">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover73()">
+                        <a href="">让“识别虚假新闻”进入大学课堂</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover74()">
+                        <a href="">【两会快评】好大学的标准不是排行榜而是好口碑</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover75()">
+                        <a href=""> 厉害了word姐！郑州女大学生用床单从6楼吊外卖</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover76()">
+                        <a href="">大学一寝室5人考研 初试成绩均超过400分走红网络</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover77()">
+                        <a href="">3所世界顶尖大学争相录取重庆一高三学生?</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover78()">
+                        <a href="">美帝大学校园里的建筑到底有多美？?</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img15" src="webact/images/news/nb54.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new16">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover79()">
+                        <a href="">中央财经大学成立“新型交易清算机制”课题组</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover80()">
+                        <a href="">湖北大学食堂“黑暗料理”升级 奇葩菜品颜值高</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover81()">
+                        <a href="">在荷尔蒙气息最浓的大学校园里，为什么说社交是个“伪命题”？</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img16" src="webact/images/news/nb60.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="myTab" class="nav">
+                            <li class="active">
+                                <a href="#new13" data-toggle="tab">1</a>
+                            </li>
+                            <li><a href="#new14" data-toggle="tab">2</a></li>
+                            <li>
+                                <a href="#new15" data-toggle="tab">3</a>
+                            </li>
+                            <li><a href="#new16" data-toggle="tab">4</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <!--4-->
+                <div role="tabpanel" class="tab-pane fade" id="fourth" aria-labelledby="sixth-tab">
+                    <section>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="new17">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover82()">
+                        <a href="">自媒体时代 到底该不该直播学校的教室？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover83()" onmouseout="newout83()">
+                        <a href="">自媒体试水收费渐成气候 作者月入最高20万元</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover84()">
+                        <a href="">自媒体：城外圈智投策略成微信引流利器</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover85()">
+                        <a href="">自媒体试水收费渐成气候 内容付费的时代来了？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover86()">
+                        <a href="">政协委员谈网络自媒体发展：应严惩传播谣言</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover87()">
+                        <a href="">长沙最大自媒体粉丝矩阵诞生，某公众号被索赔千万</a>
+                    </button>
+                                </div>
+
+                                <div class="newtop">
+                                    <img id="img17" src="webact/images/news/nb63.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new18">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover88()" onmouseout="newout88()">
+                        <a href="">刘春：加强对自媒体平台监管力度</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover89()">
+                        <a href="">从自媒体创业者到百度最年轻副总裁 | 李叫兽究竟是怎么火起来的？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover90()" onmouseout="newout90()">
+                        <a href="">自媒体时代 女性阅读大数据报告</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover91()">
+                        <a href="">北漂4年之后，他成为“全宇宙最大自媒体联盟”的CEO</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover92()">
+                        <a href="">80后杨松科：自媒体创业没那么简单</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover93()">
+                        <a href="">美团点评起诉自媒体造谣 索赔1000万</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img18">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new19">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover94()">
+                        <a href="">个不屑“自媒体”的人眼中的自媒体</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover95()">
+                        <a href="">净化自媒体平台，UC半月连发2篇处罚公告</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover96()">
+                        <a href="">我为什么支持男生打游戏？（转载自咪蒙）</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover97()">
+                        <a href="">细数手机圈这些黑科技，到底是忽悠还是创新？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover98()">
+                        <a href="">完成D轮融资，ofo与摩拜谁主江湖?</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover99()">
+                        <a href="">女性求职难，一份冷暖共知的生存样本</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img19" src="webact/images/news/nb75.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new20">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover100()">
+                        <a href="">因不让玩游戏，儿子怒砸古董，原来儿砸是这个意思</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover101()">
+                        <a href="">大妈被儿子前女友推入40米天坑身亡，这女人有毒啊！</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img20" src="webact/images/news/nb81.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="myTab" class="nav">
+                            <li class="active">
+                                <a href="#new17" data-toggle="tab">1</a>
+                            </li>
+                            <li><a href="#new18" data-toggle="tab">2</a></li>
+                            <li>
+                                <a href="#new19" data-toggle="tab">3</a>
+                            </li>
+                            <li><a href="#new20" data-toggle="tab">4</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <!--5-->
+                <div role="tabpanel" class="tab-pane fade" id="fifth" aria-labelledby="sixth-tab">
+                    <section>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="new21">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover102()">
+                        <a href="">Selina拉妹妹合照惊现三层下巴：要删除她的电话</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover103()">
+                        <a href="">欧豪马思纯恋情疑正式公开 女方生日公开送祝福</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover104()">
+                        <a href="">朱莉曾在背部刺“超密符咒”保感情 却难逃离婚劫</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover105()">
+                        <a href="">张子萱产后首露面似少女 陈赫疑似怼前妻团队，暗讽她消费过去</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover106()">
+                        <a href="">内地票房：《金刚狼3》蝉联冠军《一条狗》近4亿</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover107()">
+                        <a href="">大S被吐槽是“塑料人” 反击：你会受到法律制裁</a>
+                    </button>
+                                </div>
+
+                                <div class="newtop">
+                                    <img id="img21" src="webact/images/news/nb83.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new22">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover108()">
+                        <a href="">韩寒在西安开的餐厅关门了 被曝拖欠货款近4万元</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover109()">
+                        <a href="">宠妻狂魔”周杰伦游伦敦 街边给孕妇昆凌揉肩甜炸</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover110()">
+                        <a href="">她曾被誉最美“武大校花”，现在你还认识吗？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover111()">
+                        <a href="">斯嘉丽约翰逊离婚 前夫公开发声:希望她撤回离婚申请</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover112()">
+                        <a href="">成龙谈获奥斯卡奖：很多人说我牛 其实是中国牛</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover113()">
+                        <a href="">张国立痛陈收视率作假：把大家一起赶上黑道</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img22" src="webact/images/news/nb89.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new23">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover114()">
+                        <a href="">柳岩被曝与神秘男子牵手同游韩国 疑坐实恋情</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover115()">
+                        <a href="">资本游戏：范冰冰刘诗诗没做到的，杨幂做到了</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover116()">
+                        <a href="">马丽遇“变态”骚扰被摸屁股 发文：我很愤怒</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover117()">
+                        <a href="">孙俪穿戏服出席颁奖典礼 原因曝光令人很心疼</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover118()">
+                        <a href="">周立波在美涉毒涉枪案审讯延至4月 控罪不变</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover119()">
+                        <a href="">49岁张敏宣布复出 称性格被磨平变得很安静</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img23" src="webact/images/news/nb95.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new24">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover120()">
+                        <a href="">《三生三世》桃花夫妇修成正果 凤九帝君放弃相守</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover121()">
+                        <a href="">郑爽建群每人收200块 开撕后曝光粉丝个人信息</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img24" src="webact/images/news/nb101.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="myTab" class="nav">
+                            <li class="active">
+                                <a href="#new21" data-toggle="tab">1</a>
+                            </li>
+                            <li><a href="#new22" data-toggle="tab">2</a></li>
+                            <li>
+                                <a href="#new23" data-toggle="tab">3</a>
+                            </li>
+                            <li><a href="#new24" data-toggle="tab">4</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <!--6-->
+                <div role="tabpanel" class="tab-pane fade" id="sixth" aria-labelledby="sixth-tab">
+                    <section>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="new25">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover122()">
+                        <a href="">力压韩国国家队！ 中国业余铁人塞班夺魁</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover123()">
+                        <a href="">姚明正式当选中国篮协主席</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover124()">
+                        <a href="">32位高管MVP投票哈登榜首 詹皇已追不上前三？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover125()">
+                        <a href="">曼联遭暗讽受英足总照顾:只罚我不罚曼联那位</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover126()">
+                        <a href="">混血女模特转行综合格斗 首次登场便KO猛女</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover127()">
+                        <a href="">弄潮儿刘国梁：“不懂球胖子”打造最强国乒IP</a>
+                    </button>
+                                </div>
+
+                                <div class="newtop">
+                                    <img id="img25" src="webact/images/news/nb103.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new26">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover128()">
+                        <a href="">最强12人战将演终极PK 许昕丁宁谁能血战到底？</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover129()">
+                        <a href="">巴萨逆转奇迹激励教授 温格：盼也能扭转命运</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover130()">
+                        <a href="">许家印:不要比着买外援 青训中未看到梅西C罗</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover131()">
+                        <a href="">欧冠-惊天逆转！巴萨总分6-5晋级 MSN齐破门</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover132()">
+                        <a href="">新华时评：中国队冬奥备战 科学范儿越足越好</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover133()">
+                        <a href="">两小时跑完全马？专家：最好有时速20公里顺风</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img26" src="webact/images/news/nb109.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new27">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover134()">
+                        <a href="">国羽主力出击全英赛 谌龙或半决赛大战李宗伟</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover135()">
+                        <a href="">NBA与微博结成长期战略合作伙伴关系</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover136()">
+                        <a href="">中超英雄首轮评选 野兽PK暴力鸟帕托克星入围</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover137()">
+                        <a href="">迷妹称追国乒有自豪感 继科粉门票花费超200万</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover138()">
+                        <a href="">德羽赛林丹爆冷完败遭淘汰 谌龙孤身一人进8强</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover139()">
+                        <a href="">小刘翔横空出世！18岁高中生跨栏成绩超同期刘翔</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img27" src="webact/images/news/nb115.jpg">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="new28">
+                                <div class="list-item">
+                                    <button type="button" class="list-group-item" onmouseover="newover140()">
+                        <a href="">这才是乒乓球最高赛事！马龙称队内赛为全明星赛，日本队全被打脸</a>
+                    </button>
+                                    <button type="button" class="list-group-item" onmouseover="newover141()">
+                        <a href="">中国足球新历史！恒大战平劲敌 从地狱带走一分</a>
+                    </button>
+                                </div>
+                                <div class="newtop">
+                                    <img id="img28" src="webact/images/news/nb121.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="myTab" class="nav">
+                            <li class="active">
+                                <a href="#new25" data-toggle="tab">1</a>
+                            </li>
+                            <li><a href="#new26" data-toggle="tab">2</a></li>
+                            <li>
+                                <a href="#new27" data-toggle="tab">3</a>
+                            </li>
+                            <li><a href="#new28" data-toggle="tab">4</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="black-panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-4">
+                    <h2 class="fontSize18">服务号</h2>
+                    <span class="line"></span>
+                    <img src="webact/images/offical/qrcode.jpg" alt="..." width="50%" />
+                    <p>CampusMedia2016</p>
+                    <p>扫一扫关注微信账号</p>
+                </div>
+                <div class="col-lg-4">
+                    <h2 class="fontSize18">联系我们</h2>
+                    <span class="line"></span>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">商务合作：bd@heibaixiaoyuan.com</li>
+                        <li class="list-group-item">市场合作：hz@heibaixiaoyuan.com</li>
+                        <li class="list-group-item">媒体报道：pr@heibaixiaoyuan.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-2"></div>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav class="navbar navbar-default ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                </div>
+
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav ">
+                    <li>友情链接</li>
+                    <li><a href="http://www.wxb.com/" target="_blank">公众号助手</a></li>
+                    <li><a href="http://www.wtoutiao.com/" target="_blank">微头条</a></li>
+                    <li><a href="http://www.adwo.com/" target="_blank">安沃传媒</a></li>
+                    <li><a href="http://www.xiaozhu.com/" target="_blank">小猪</a></li>
+                    <li><a href="http://www.xdf.cn/" target="_blank">新东方</a></li>
+                    <li><a href="http://www.sohu.com/" target="_blank">搜狐</a></li>
+                    <li><a href="https://tieba.baidu.com/" target="_blank">百度贴吧</a></li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </footer>
+</body>
+<script src="webact/js/jquery.min.js"></script>
+<script src="webact/js/bootstrap.min.js"></script>
+<script src="webact/js/swiper.min.js"></script>
+<script src="webact/js/news.js"></script>
+
+<script>
+    
+    var aNum = $('#newList .list-item a')
+    for(var i = 0 ; i < aNum.length ; i ++)
+    {
+        var num = Math.ceil(Math.random()*6)
+        var a = $('#newList .list-item a')[i];
+        idNum = 'news-intro.html#/id_' + num
+        a.href = idNum        
+    }
+    
+    var blakNum = $('#heibainews .list-item a')
+    for(var i = 6 ; i < blakNum.length ; i ++)
+    {
+        var num = Math.ceil(Math.random()*6)
+        var a = $('#heibainews .list-item a')[i];
+        idNum = 'news-intro.html#/id_' + num
+        a.href = idNum   
+   
+    }
+</script>
+</html>

@@ -1,0 +1,39 @@
+.details{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    display: block;
+    width: 100px;
+    height: 28px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    background: #030303;
+    text-decoration: none !important;
+}
+.details:hover
+{
+    color: #fff;
+}
+.media {
+    border: none;
+    position: relative;
+    background: #eee;
+    padding: 0;
+}
+.thumbnail a>img, .thumbnail>img{
+    margin-top: 0;
+    /*height: 600px;*/
+    width: 100%;
+}
+.media h4{
+    line-height: 88px;
+    font-size: 17px;
+}
+.media p{
+    margin-bottom: 30px;
+}
+.content{
+    margin-top: 100px;
+}
