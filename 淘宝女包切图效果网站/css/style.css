@@ -1,0 +1,357 @@
+body{
+    width:100%;
+    background-color: #ffeeee;
+
+}
+.page-header{
+    width: 100%;
+    height: 120px;
+    background-color: #f4eedb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.header-content{
+    width:994px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    flex-grow: 3
+}
+#logo{
+    margin-top: 30px;
+    margin-right: 190px;
+}
+#text{
+    display: inline-block;
+    margin-right: 190px;
+    margin-top: 62px;
+    font-size: 30px;
+    color: #111116;
+    font-weight: 700;
+}
+/*导航样式*/
+.page-nav{
+    width: 100%;
+    height: 30px;
+    background-color: #423333;
+}
+.nav-list{
+    width: 994px;
+    height: 30px;
+    margin-left: 480px;
+}
+.nav-list li{
+    float: left;
+    text-align: center;
+    line-height: 30px;
+}
+.nav-list li a{
+         padding-left: 20px;
+         padding-right: 20px; 
+         border-right: 1px solid #fff;
+         font-size: 16px;
+         color:#eeeeee; 
+}
+.nav-list li a:hover{
+    color: rgba(260, 100, 160, .7)
+}
+.nav-list .content-list a{
+        border-left: 1px solid #fff;
+}
+/*客服中心*/
+.call-center{
+    margin-top: 8px;
+}
+.call-center .callList{
+    width: 994px;
+    height: 44px;
+    margin: 0 auto;
+    background-color:#eeddcc; 
+}
+.callList li h1{
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 44px;
+}
+.callList li{
+    float: left;
+    margin-left: 24px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #030202;
+    font-weight: bold;
+}
+/*商品*/
+.shop-container{
+    margin-top: 12px;
+}
+.shop-content{
+    width: 994px;
+    height: 523px;
+    margin: 0 auto;
+    position: relative;
+}
+.hot-cake{
+       float: left;
+}
+#hot{
+    margin-left: 14px;
+}
+#bagList{
+    width:660px;
+    height: 218px;
+    border-top: 1px solid black; 
+    background-size: 100% 100%;
+    position: absolute;
+    top: 304px;
+    left: 0;    
+}
+#bagList li a{
+       margin-top: 14px;
+       margin-left: 17px;
+       display: inline-block;
+       font-size: 15px;
+       color: #484a4c;
+}
+#bagList li a:hover{
+    color: rgba(120,160,230,.7);
+}
+#bagList li a h2{
+        padding: 4px 6px;
+        border-radius: 3px;
+        background-color: #34443b;
+        font-size: 20px;
+        font-weight: normal;
+        color: #fff;
+}
+#bagList li a h2:hover{
+        box-shadow: 0 0 20px #c2bbc0;
+}
+.new-thing img{
+    margin-top: 6px;
+}
+/**/
+.page-center{
+    margin-top: 6px;
+}
+.shop-bagImg{
+    width: 994px;
+    height: 606px;
+    margin: 0 auto;
+}
+.shop-bag{
+     width: 331px;
+     height: 316px;
+     float: left;
+     cursor: pointer;
+}
+#img{
+    margin-top: 70px;
+}
+.context{
+    display: inline-block;
+    position: relative;
+    
+}
+.context p{
+    font-size: 14px;
+    color: #919192;
+}
+.context h2{
+    margin-top: 2px;
+    color: #030202;
+}
+.price{
+    position: absolute;
+    right: 0;
+    top:110px; 
+}
+#price{
+    font-size: 32px;
+    font-weight: 800;
+    color: #d2132d;
+}
+ .price a{
+    display: block;
+    width: 104px;
+    height: 44px;
+    border: 3px solid #e0b971;
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 2px 2px 4px #e0b971;
+}
+.price .buy:hover{
+        color: #fff;
+        
+}
+.price .buy{
+       font-size: 16px;
+       color: #d2132d;
+       font-weight: 600;
+       margin: 2px;
+       background-color: #efdbb4;
+       border-radius: 4px;
+}
+
+/**/
+.summerFashBag{
+    width: 994px;
+    margin: 0 auto;
+}
+.bagBox{
+    float: left;
+    margin-left: 2px;
+    cursor: pointer; 
+}
+.bagBox:hover{
+    box-shadow: 0 0 30px #b0b0b0;
+    transform: translate(0,-4px);
+    transition: 0.6s;
+}
+.bagBox .newBag{
+        display: block;
+        margin-top:26px;
+        margin-left: 26px;
+        margin-bottom:14px;
+         
+}
+#bigImg{
+    margin-bottom: 10px;
+}
+.wetour img{
+     margin-top: 8px;
+}
+.smallBag {
+    margin-right: 2px;
+    margin-top: 8px;
+    display: inline-block;
+    text-align: center;
+}
+.shop-bagImg a img:hover{
+        border-radius: 4px;
+        box-shadow: 0 0 6px #919192;
+}
+.smallBag:hover{
+    border-radius: 4px;
+    box-shadow: 0 0 2px #34443b;
+}
+.tour-poke{
+    padding-top: 33px;
+}
+/*页脚样式*/
+.page-footer{
+    margin-top: 8px;
+}
+.footer-header{
+    width: 994px;
+    margin: 0 auto;
+}
+.footer-header a img{
+    display: inline-block;
+    margin-left: 3px
+}
+.footer-header a img:hover{
+    box-shadow: 4px 4px 7px #c2bbc0;
+    transform: translate(0,5px);
+   transition: 0.5s;
+}
+.footer-content{
+    margin-top: 13px;
+    width: 994px;
+    height: 31px;
+    background-color: #423333;
+    line-height: 31px;
+    display: flex;
+    justify-content: center;
+}
+.footer-content li a{
+        float: left;
+        margin-right: 40px;
+        font-size: 14px;
+        color: #eeeeee;
+}
+.footer-content li a:hover{
+    color: rgba(100, 200, 300, .7)
+} 
+.footer-container{
+    width: 994px;
+    height: 180px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    position: relative;
+}
+.footer-context{
+    width: 973px;
+    height: 115px;
+    border: 1px solid #eeeeee;
+    border-right-style: none;
+    border-radius: 4px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.footer-context li{
+    width: 242px;
+    height: 115px;
+    border-right: 1px solid #eeeeee;
+    float: left;
+}
+.footer-context li img{
+    float: left;
+    margin-top: 44px;
+    margin-left: 20px;
+} 
+.footer-context .order{
+    width: 185px;
+    height: 115px; 
+    margin-left: 58px;
+    margin-top: 19px;
+    position: relative; 
+}
+.footer-context .order span{
+        padding-left: 19px;
+        font-size: 15px;
+        color: #dddddd;      
+}
+.order p{
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #c2bbc0;
+}
+.order .hint{
+        margin-top:11px; 
+}
+.introduceText{
+    font-size: 13px;
+    color:#919192;
+    text-indent: 0.5em;
+    position: absolute;
+    top: 25px;
+    left: 4px;
+}
+.textList{
+    position: absolute;
+    left: 0;
+    top: 140px;
+    display: flex;
+    flex-grow: 3;
+}
+.textList li{
+    margin-left: 64px;
+}
+.textList li img{
+    float: left;
+}
+.textList li span{
+    margin-left: 15px;
+    color: #423333;
+}
+
+
+
