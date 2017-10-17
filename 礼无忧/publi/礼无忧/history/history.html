@@ -1,0 +1,19 @@
+<div style="background: #F3F3F3;padding-bottom: 100px;min-height: 45%;max-height: 100%; !important;" >
+	<div id="" class="contentbody" style="position: relative;top: 50px;" >
+		<div class="flitemdiv " style="padding: 30px;overflow :hidden;margin: 0px 10px 10px 0; float: left;position: relative; background: white;font-size: 15px;position: relative;" 　id="{{dataObj.timeStamp}}" ng-repeat='dataObj in historyObj track by $index' ng-if="dataObj.price"  ng-mouseover="hoveShow($event)" ng-mouseleave="leavHide($event)" ng-click="clickgo(dataObj.id,dataObj.title,dataObj.path)">
+		<div style="position: absolute; left: -265px;top: 15px;font-size:14px ;cursor: pointer;" id="showtiem" > <small>上次浏览时间 -</small> {{dataObj.dates | date : 'yyyy-MM-dd HH:mm'}} </div>
+			<a href=""><img ng-cloak ng-src="{{dataObj.urls}}" /></a>
+			<p><span style="float: left;border: solid 1px #6e6e6e;padding:0 2px; border-radius: 5px;position: absolute;bottom: 25px;" ng-if='dataObj.dz'>可定制 </span></p>
+			<a href=""	 style="color: black !important;"><p ng-bind='dataObj.title' style="margin-top: 20px;"></p></a>
+			<p ng-bind='"￥" + dataObj.price' style="" ng-cloak></p>
+			<p style="margin-top: 15px; text-align: right;" ng-cloak> <b style="color: red;">{{dataObj.num}}</b>  次浏览 
+				 
+
+		</div>
+			
+			<h1 ng-hide="isShow"  style="color: #d93732;font-size: 35px;text-align: center;" class="animated wobble">哈尼，还没有浏览过哦，浏览过商品再来找我哦，拜了个百！</h1>
+		<div class="" style="clear: both !important;">
+	
+		</div>
+	</div>
+ 

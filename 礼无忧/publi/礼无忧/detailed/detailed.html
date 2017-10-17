@@ -1,0 +1,161 @@
+<div class="xqnavtop xqnav" style="position: fixed;top:0px !important;margin: 0 !important;display: none; background: white;" ng-cloak>
+
+	<p style="width: 900px;margin:0 auto ;" id="navheaders">
+		<a href="" id="ss" style="color: red;" ng-click="scroll('#xqcontent')">礼物详情</a>
+		<a href="" ng-click="scroll('#cs')"> 规格参数</a>
+		<a href="" ng-click="scroll('#pj')">评价晒单 {{showlength?"（"+showlength+"）":''}}</a>
+		<span id="QQLX" style="display: inline-block; float: right;"> QQ交谈 么么哒</span>
+	</p>
+</div>
+
+<div class="currentloc" ng-cloak="">
+	<p>
+		<a href="">首页</a>/
+		<a href="">礼物分类/</a>
+		<span id="">
+			{{title}}
+		</span>
+		<a href="" style="float: right; margin-right:50px ;">QQ在线交谈</a>
+		<a href="" id="" style="float: right;margin-right: 50px;">
+			服务热线：400-611-2156 (8:00－24:00)
+		</a>
+
+	</p>
+</div>
+
+<div id="xqheader" ng-cloak="">
+
+	<div id="xqleft">
+		<div id="smallimage" data-am-widget="gallery" data-am-gallery="{ pureview: true }" class="ckimg">
+			<a ng-repeat=" src in xqObj.detailed.smallImage" href="{{src}}">
+				<img ng-mouseover="over($event)" style="width:68px;height: 68px;border: 1px solid #e6e6e6;margin-top: 16px;" ng-src="{{src}}" ng-click="ckimg()" />
+			</a>
+
+		</div>
+		<div id="bigimage">
+			<img style="width: 100%;" data-original='{{xqObj.bigImage}}' ng-src="{{xqObj.bigImage}}" />
+		</div>
+
+	</div>
+
+	<div id="xqright" >
+		<h1 ng-bind="xqObj.title"></h1>
+		<p style="font-size: 14px;color: #666;margin-top: 20px;" ng-bind="xqObj.detailed.smalltitle"> </p>
+		<p style="text-align: right;padding: 20px 0; margin-top: 20px;border-width: 1px 0; border-style: solid; border-color: #e6e6e6;position: relative;"> <big style="position: absolute;left: 0;" ng-bind="'￥'+xqObj.price"></big> <small>有现货</small></p>
+		<div style="padding: 20px 0;">
+			<p class="xqlb" id="gxdz"><small>个性定制：</small> <span>直接购买</span> <span>个性定制</span></p>
+			<p class="xqlb" id="lwkw"><small>礼物款式：</small><span>小手链+小羊项链</span> </p>
+		</div>
+		<p id="go">
+			<a href="">定制购买</a> <span id="love"><i></i></span></p>
+		<p id="xqall"> <i></i> 查看更多同类商品</p>
+	</div>
+
+</div>
+
+<div id="xqnav" class="xqnavbottom xqnav" ng-cloak="">
+
+	<p style="width: 500px;margin:0 auto ;" id="navheaders">
+		<a href="" style="color: red;" ng-click="scroll('#xqcontent')">礼物详情</a>
+		<a href="" ng-click="scroll('#cs')"> 规格参数</a>
+		<a href="" ng-click="scroll('#pj')">评价晒单 {{showlength?"（"+showlength+"）":''}}</a>
+
+	</p>
+</div>
+
+<div id="xqbodt" ng-cloak="">
+	<div id="xqcontent" 　>
+		<p id="info">本产品当天下午5点前的订单当天发货。</p>
+		<div>
+
+			<img ng-repeat="src in xqObj.detailed.goodsData track by $index" src='{{src}}' alt="{{$index+'图片'}}" />
+
+		</div>
+
+	</div>
+
+	<h1 class="cstitle" id="cs"> <span>规格参数</span> </h1>
+	<div id="ggcs" class="csitem">
+		<ul>
+			<li ng-repeat="item in canshu">{{item}}</li>
+			<li style="color: red;" ng-bind="xqObj.detailed.tishi"></li>
+		</ul>
+		<div style="clear: both;"></div>
+	</div>
+	<h1 class="cstitle" id="pj"><span>晒单评价</span></h1>
+	<div id="sdpj" class="csitem">
+		<p style="text-align: center;"> <span class="toggle" style="color: #ED3D38;" ng-click="clickAll()">所有评价{{alllength?"（"+alllength+"）":''}}  </span>/ <span class="toggle" id="" ng-click='clickImg()'> 有晒单的评价{{showlength?"（"+showlength+"）":''}}</span></p>
+		<p style="text-align: right;font-size: 15px;">好评率66.8% &#x3000&#x3000&#x3000&#x3000</p>
+		<ul id="comment" data-am-widget="gallery" data-am-gallery="{ pureview: true }">
+			<li ng-if='isAll' ng-repeat="item in commnetAll track by $index">
+
+				<p ng-cloak="">&#x3000&#x3000 <i class="toux"></i> {{item.seekTitle}} <time class="time">{{item.time}}</time>
+					<div class="stars"><i class="icon-star"></i><i class="icon-star"></i></div>
+				</p>
+				<p>{{item.textContent}}</p>
+			</li>
+
+			<li ng-if='!isAll' ng-repeat="item in commnetAll track by $index">
+
+				<p>&#x3000&#x3000 <i class="toux"></i> {{item.seekTitle}} <time class="time">{{item.time}}</time>
+					<div class="stars"><i class="icon-star"></i><i class="icon-star"></i></div>
+				</p>
+				<p>{{item.textContent}}</p>
+
+				<div style="margin-top: 20px;" 　class="ckimg pjimg">
+					<a style="width: 128px;height: 128px;display: inline-block;position:relative ; border: solid 1px #E6E6E6;padding: 5px;margin-left: 20px; " ng-repeat='src in item.images' href="{{src}}">
+						<i class="fangda"></i>
+						<img style="width: 100%;height: auto; max-height: 128px !important;" src="{{src}}" alt="{{item.textContent}}" ng-click="ckimg()" ng-mouseover="mouseover($event)" ng-mouseleave="mouseout($event)" />
+					</a>
+				</div>
+
+			</li>
+		</ul>
+		<div id="pagescomment" class="page">
+			<a class="pageebar barrleft" ng-click="pageClick(-1)"></a>
+			<div id="pages">
+
+			</div>
+			<a class="pageebar barright" ng-click="pageClick(1)"></a>
+		</div>
+
+	</div>
+	<h1 class="cstitle" id="cnxh"> <span>猜你喜欢</span> </h1>
+	<div class="csitem" style="background: #f5f5f5;padding-top: 20px !important;overflow: hidden;margin-bottom: 0 !important;">
+		<div id="xhtjcontent" style="position: relative;">
+			<div class="flitem" style="padding: 30px 40px 5px 40px;margin: 0px 10px 10px 0; float: left;background: white;font-size: 15px;position: relative;" 　id="{{dataObj.timeStamp}}" ng-repeat='dataObj in tjObj track by $index' ng-click="detailed($event,dataObj.title)">
+
+				<img ng-cloak ng-src="{{dataObj.bigImage}}"  id="{{dataObj.timeStamp}}" style="width: 150px;height: 150px;" />
+				<p ng-bind='dataObj.title' style="text-align: center;" id="{{dataObj.timeStamp}}" ></p>
+				<p ng-bind='"￥" + dataObj.price' style="margin-top: -20px !important;text-align: center;" ng-cloak id="{{dataObj.timeStamp}}" ></p>
+			</div>
+			<div style="clear: both;"> </div>
+		</div>
+		
+		<div id="xhbottom">
+			
+		</div>
+	</div>
+</div>
+
+<!--<script src="../../js/viewer.js" type="text/javascript" charset="utf-8"></script>-->
+<!--<script>
+	var viewer = new Viewer(document.getElementById('xqbodt'), {
+		url: 'data-mmd',
+		navbar: true,
+		toolbar: true,
+		rotatable: false,
+		inline: false
+	});
+
+	var viewers = new Viewer(document.getElementById('comimg'), {
+		url: 'data-mmds',
+		navbar: true,
+		toolbar: true,
+		rotatable: false,
+		inline: false
+	});-->
+<!--</script>-->
+
+<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/amazeui.min.js" type="text/javascript" charset="utf-8">

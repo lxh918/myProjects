@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>礼物无忧</title>
+		<link rel="icon" type="image/png" href="logo.png">
+		
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/angular-ui-router.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/goodsData.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="js/ZYStorage.js" type="text/javascript" charset="utf-8"></script>
+		 
+		<link rel="stylesheet" type="text/css" href="style/index.css"/>
+		<link rel="stylesheet" type="text/css" href="style/fenlei.css"/>
+		<link rel="stylesheet" type="text/css" href="style/xq.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/amazeui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="style/animate1.css"/>
+				
+	</head>
+	
+	<body ng-app="myApp" >
+		<nav ui-view='nav'  ng-cloak></nav>
+		 
+		<mian ui-view='mian'  ></mian>
+		<footer ui-view='footer'> </footer>
+		<script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/viewer.js" type="text/javascript" charset="utf-8"></script>-->
+		 
+	</body>
+	
+	 
+</html>

@@ -1,0 +1,165 @@
+<div id="navcontent">
+
+	<div id="gouwuche" style="display:none;">
+		<ul style="margin-top:20px ;">
+
+			<li><span ng-click='skipHome()' id="home"></span>
+			</li>
+			<big style="font-size: 20px;font-weight: 600;position: relative;top: 10px;left: 30px;">我的购物车</big>
+
+			<p style="display: inline-block;float:right ;">
+				<a href="">登录</a>
+				<a href="">注册</a>
+				<a href="" ng-click="tohistory()">浏览记录 </a>
+			</p>
+		</ul>
+	</div>
+	
+	<div id="baidu">
+		<div id="bdheader">
+			<div class="headeicon">
+				
+			</div>
+				<a href="" id="shouqi">收起</a>
+		</div>
+		<div id="bdmian">
+			<h5>深圳市礼无忧电子商务有限公司</h5>
+			<div class="bdbody">
+					<div class="img">
+						
+					</div>
+					<div id="bdright">
+						<p>BDV-385003058</p>
+						<p>累计时间：77个月</p>
+						<p>67% 好评 <a href="">评价</a>| <a href="">举报</a></p>
+					</div>
+					<div style="clear: both;">
+				
+			</div>
+			</div>
+			
+		</div>
+		<div id="bdfooter">
+			<p>认证类型  <a href="" style="float: right;">更多</a></p>						
+			<p style="color: darkgray;">实名认证</p>
+			<div id="bdinput">
+				<input type="" name="" id="" value="管永刚帅帅哒！" /> <i ng-click="clickGuan()" class="searchicon"></i>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="baidu" >
+			
+	</div>
+	
+	
+	<ul id="indexheader">
+
+		<li><span ng-click='skipHome()' id="home"></span>
+		</li>
+
+		<li id="down" ng-mouseenter="isTrue=true" ng-mouseleave="isTrue=false">
+			礼物分类
+
+			<div id="downmenu" ng-show='isTrue'>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:"少女心饰"})'>少女心饰</a>
+				</p>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:"萌萌美物"})'>萌萌美物</a>
+				</p>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:"为爱停留"})'>为爱停留</a>
+				</p>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:666})'>咻咻咻</a>
+				</p>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:888})'>科技达人</a>
+				</p>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:888})'>幸福保险</a>
+				</p>
+				<p>
+					<a ng-click="isTrue=false" ui-sref='index.fenlei({id:888})'>爱情烙印</a>
+				</p>
+
+			</div>
+		</li>
+		<li>送礼导航</li>
+		<li>创意礼物</li>
+		<li>新品上架</li>
+		<li>女生节礼物 &#x3000 </li>
+		<li id="search">
+			<input type="text" />
+			<div class="searchicon"></div>
+		</li>
+		<li style="position: relative;">
+			<div id="user" class="user">
+				<span>  
+					
+				</span>
+			</div>
+			
+			<div id="userdiv">
+				<div><i class="jiantou"></i></div>
+				<p><big><a href="">登录/注册</a></big></p>
+				<p ><a href="" ng-click="tohistory()">浏览历史</a></p>
+			</div>
+			<div id="shoping" class="user" style="position: relative;">
+				<small id="gounum" ng-if="spObj">{{soppingNum}}</small>
+				<span id="gwicon">
+				  
+				</span>
+				<div id="gwall" style="display: none;">
+					<i class="jiantou"></i>
+					<div id="gdbody" ng-if="spObj">
+						
+						<table>
+							<tr ng-repeat="obj in spObj">
+								<td>
+									<a href="" ng-click="clickgo(obj.id,obj.title,obj.path)"><img style="width: 60px;height: 60px;" src="{{obj.img}}" /></a>
+								</td>
+								<td class="flex">
+									<a href="">{{obj.title}}</a>
+									<br />
+									<b>
+									<small>{{obj.beizhu}}</small>
+								</b>
+								</td>
+								<td class="flexright">
+									￥{{obj.price}}
+									<br /> X{{obj.num}}
+									<br />
+									<a href="" ng-click="remove(obj.id,obj.beizhu)">删除</a>
+								</td>
+							</tr>
+						</table>
+						<div id="" style="margin-top: 15px;font-size: 15px;">
+							<div style="position: relative;top: -5px;" class="float-left">
+								<small>共<big>{{length}}</big>件商品</small>
+								<br /> 合计
+								<b style="color: red;font-size: 15px;"> {{zongji}}元</b>
+							</div>
+							<a href="" id="jiesuan" class="float-right" ng-click="go()">结算</a>
+						</div>
+					</div>
+					<p ng-hide="spObj">欧尼，购物车为空抓紧购物哦</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+</div>
+
+<div id="fudong" style="display: none;">
+	<div id="indexqq">
+		<span></span>
+	</div>
+	<div id="indexgp" data-am-smooth-scroll="{position: 0, speed: 800}">
+		<span>
+				
+			</span>
+	</div>
+</div>

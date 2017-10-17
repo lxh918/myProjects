@@ -1,0 +1,108 @@
+<div class="currentloc">
+	<p>
+		<a href="">首页</a>/
+		<a href="">礼物分类/</a> 
+		<span id="">
+			{{path}}
+		</span>
+		<a href="" style="float: right; margin-right:50px ;">QQ在线交谈</a>
+		<a href="" id="" style="float: right;margin-right: 50px;">
+			服务热线：400-611-2156 (8:00－24:00)
+		</a>
+
+	</p>
+</div>
+
+<div id="flheader">
+	<p class="title fltitle">
+		<big class="">分类</big> ： &#x3000
+		<a href="" style="color: red;">全部
+			<!--<a class=" "  ng-click="flclick(this)" href="" ng-repeat='x in data.category'>{{x}} </a>-->
+			<a href="">项链</a>
+			<a href=""> 手链 </a>
+			<a href="">戒指</a>
+			<a href=""> 耳环 </a>
+	</p>
+
+	<p class="title dhfl" style="border: none;"> <big>价格</big>： &#x3000
+		<a href="" style="color: red;" ng-click="custom(0,0,true)">全部</a>
+		<a href="" ng-click="custom(0,100)"> 100以下</a>
+		<a href="" ng-click="custom(0,100)">100以下</a>
+		<a href="" ng-click="custom(100,150)">100~150</a>
+		<a href="" ng-click="custom(200,300)">200~300</a>
+		<a href="" ng-click="custom(300,500)">300~500</a>
+		<a href="" ng-click="custom(1000,10000000)"> 1000以上</a>
+	</p>
+
+</div>
+<div style="background: #F5F5F5;padding-top: 10px;">
+	<div id="flmain">
+		<p id="maintitle">
+			<a href=""> 畅销&#x3000 &#x3000 ｜</a>
+			<a href="">最新&#x3000 &#x3000 |</a>
+			<a href="" ng-click="bigToSmall(event)">&#x3000 价格从高到低&#x3000 &#x3000 | </a>
+			<a href="" ng-click='smallToBig(  event)' ;>价格从低到高</a>
+			<span style="float: right; margin-right:50px;"> <big  id="tj" ng-click='toggle("tj")'></big> 仅显示特价商品</span>
+			<span style="float: right;margin-right: 30px;"> <big id="dz" ng-click='toggle("dz")'></big> 仅显示定制商品</span>
+		</p>
+
+		<div id="fenlei">
+			<div class="flitem flitemdiv" data-dz="{{dataObj.isdz?'dingzhi':'nodz'}}" style="padding: 30px;margin: 0px 10px 10px 0; float: left;background: white;font-size: 15px;position: relative;" 　id="{{dataObj.timeStamp}}" ng-repeat='dataObj in goods track by $index' ng-click="detailed(dataObj.timeStamp,dataObj.title)" ng-if="dataObj.price" >
+
+				<img ng-cloak ng-src="{{dataObj.bigImage}}" />
+				<p><span style="float: left;border: solid 1px #6e6e6e;padding:0 2px; border-radius: 5px;position: absolute;bottom: 25px;" ng-if='dataObj.isdz'>可定制 </span></p>
+				<p ng-bind='dataObj.title' style="margin-top: 20px;"></p>
+				<p ng-bind='"￥" + dataObj.price' style="" ng-cloak></p>
+				<p style="margin-top: 15px; text-align: right;" ng-cloak> {{dataObj.commentNum}} 人评价 {{$index}}
+
+				</p>
+
+			</div>
+
+		</div>
+
+		<div style="clear: both;"></div>
+		<div style="height: 34px;padding: 40px 0;text-align: center;" class="page">
+			<a style="" class="pageebar barleft"></a>
+
+			<div id="pages" style="display: inline-block;color: #F5F5F5 !important;"></div>
+			<a class="pageebar  barright"></a>
+		</div>
+		<div id="mainfooter">
+
+			<div ng-cloak id="mainleft">
+				<p style="border-bottom: solid 5px white;font-size: 20px;">婚礼策划</p>
+
+				<img src="http://www.liwuyou.com/themes/pc/images/gifts.png" />
+			</div>
+			<div id="mianright" style="padding-right: 100px;">
+				<p>少女心饰</p>
+				<p ng-cloak style="font-size: 15px;margin-top: 10px;"> 礼无忧网个性饰品，时尚配饰，DIY饰品定制，创意独特，一切又有想不到，没有做不到，送朋友，家人，甚至还可以送自己。 礼无忧网饰品专区有上千款好礼等你挑选，还在犹豫什么呢？马上进来挑选属于你的礼物吧。</p>
+				
+			</div>
+			<div id="" style="clear: both;">
+		</div>
+			<div ng-if='isShow'  id="lwall" style="width: 1000px;margin:0 auto ; border: 1px solid #e2e2e2 ; position: relative;top: 30px;padding: 20px 30px;">
+				<a href="">春节礼物</a>
+				<a href="">2.14情人节礼物 </a>
+				<a href="">圣诞节礼物</a>
+				<a href="">感恩节礼物</a>
+				<a href="">光棍节礼物 </a>
+				<a href="">国庆节礼物</a>
+				<a href="">三八妇女节礼物</a>
+				<a href="">愚人节礼物</a>
+				<a href="">母亲节礼物</a>
+				<a href="">六一儿童节礼物</a>
+				<a href="">父亲节礼物</a>
+				<a href="">端午节礼物</a>
+				<a href="">七夕情人节礼物</a>
+				<a href="">教师节礼物</a>
+				<a href=""> 中秋节礼物</a>
+				<a href="">生日礼物</a>
+			
+			</div>
+			<p id="ckall" style="text-align: right; width: 1000px; margin: 0 auto;position: relative;top: 40px;"><span style="font-size: 15px;cursor: pointer" ng-click='isShow = ! isShow'>{{isShow?'收起':'查看'}}更多</span> 
+				<span id="ckallbar"></span></p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+<div id="" class="body" id="shoping">
+	<p style="font-size: 14px; position: relative !important;padding: 20px; line-height: 22px;" class="contentbody">
+		<a href="../index.html">首页</a>/购物车
+		<a href="" class='float-right'>服务热线：400-611-2156 (8:00－24:00)</a>
+		<a href="" class='float-right'>QQ在线交谈</a>
+	</p>
+	
+	<p id="null" ng-if="!spdata">
+		购物车中没有礼物
+	</p>
+	<table style="width: 1200px;margin: 0 auto;background: white;">
+
+		<tr ng-repeat="data in spdata ">
+			<td class="td-left">
+				<a href="" ng-click="detailed(data.id,data.title,data.path)">
+					<img style="width: 68px;height: 68px;" src="{{data.img}}" />
+				</a>
+				<div style="display: inline-block;margin-left: 30px;">
+					<span>{{data.title}}</span><br />
+					<small>{{data.beizhu}}</small>
+				</div>
+			</td>
+
+			<td>
+				单价￥{{data.price}}{{mmd}}
+			</td>
+			<td class="zengjia">
+				<div id="zengjian" >
+					<span id="jian" ng-click="jian(data.id,data,$event)">
+					-
+				</span>
+				
+					<span id="">
+						{{data.num}}
+					</span>
+					<span id="jia"  ng-click="jia(data.id,data,$event)">
+					+
+				</span>
+				</div>
+			</td>
+			<td>
+				￥{{data.price*data.num }}
+			</td>
+			<td>
+				<span class="shanchu" ng-click="remove(data.id,data.beizhu)">删除</span>
+			</td>
+		</tr>
+	</table>
+
+	<div id="" style="padding: 20px 40px; width: 1200px;margin: 0 auto; box-sizing: border-box;background: white;">
+		<div id="heji" >
+			<div>    <a href="../index.html">< 继续购物</a> </div>
+					<div id="jiezhang" class="float-right" style="position: relative; top: -30px;right: 50px;">
+						<span>共{{spdata.length}}件商品</span> &#x3000
+						<big>合计</big>：<b style="color: red;">￥{{zongji}}元</b>
+						 &#x3000&#x3000 &#x3000&#x3000 &#x3000&#x3000 &#x3000&#x3000
+						<a href="">结账</a>
+					</div>
+			</div>
+		</div>
+		
+		
+		<br />
+		<br />
+		<br />
+		<div id="" style="clear: both;">
+
+		</div>
+	</div>
+	
